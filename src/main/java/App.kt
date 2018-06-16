@@ -13,7 +13,7 @@ import java.util.logging.Logger
 
 @Throws(NativeHookException::class, InterruptedException::class, AWTException::class, IOException::class)
 fun main(args: Array<String>) {
-    val path = Paths.get("/Users", "benjefferies", "Documents")
+    val path = Paths.get(System.getProperty("user.home"), "Documents")
     val recording = Files.createTempFile(path, "mouserecording", ".json")
     println("Starting recorder saving records to ${recording.toAbsolutePath().toAbsolutePath()}")
     requestUserinput()
